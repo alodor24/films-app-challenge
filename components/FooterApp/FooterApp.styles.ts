@@ -2,12 +2,13 @@ import styled from "styled-components";
 
 export const Footer = styled.footer`
   padding: 2.5rem 0;
-  background-color: green;
+  background-color: ${(props) => props.theme.colors.grey[1]};
 `;
 
 export const Text = styled.p`
-  color: #fff;
+  color: ${(props) => props.theme.colors.white[0]};
   font-size: 1rem;
+  font-weight: ${(props) => props.theme.fontWeight[2]};
   margin: 0;
   text-align: center;
 `;
@@ -20,10 +21,10 @@ export const Wrapper = styled.div`
 `;
 
 export const ExternalLink = styled.a`
-  color: #fff;
-  transition: all ease-in-out 0.3s;
+  color: ${(props) => props.theme.colors.blue[0]};
+  transition: ${(props) => props.theme.transition[0]};
 
   :hover {
-    color: red;
+    color: ${(props) => props.theme.colors.green[0]};
   }
 `;

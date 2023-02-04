@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
         max-width: 100vw;
         overflow-x: hidden;
         font-family: 'Montserrat', sans-serif;
+        background-color: #212121;
     }
 
     a {
