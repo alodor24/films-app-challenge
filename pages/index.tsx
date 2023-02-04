@@ -3,7 +3,7 @@ import Layout from "@/components/Layout";
 const Home = () => {
   return (
     <Layout>
-      <p>Hello world</p>
+      <p style={{ color: "#fff" }}>Home</p>
     </Layout>
   );
 };

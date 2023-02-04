@@ -1,14 +1,7 @@
-import {
-  Button,
-  Container,
-  Form,
-  Nav,
-  Navbar,
-  NavDropdown,
-} from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "../../public/logo.svg";
+import Logo from "../../public/images/logo.svg";
 import * as SC from "./NavbarApp.styles";
 
 const NavbarApp = () => {
@@ -26,22 +19,23 @@ const NavbarApp = () => {
           className="justify-content-end"
         >
           <Nav>
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link>
+              <SC.LinkItem href="/">Home</SC.LinkItem>
+            </Nav.Link>
+            <Nav.Link>
+              <SC.LinkItem href="/favorites">My favorites list</SC.LinkItem>
+            </Nav.Link>
+            <SC.SelectNavDropdown title="Categories" id="basic-nav-dropdown">
+              <Nav.Link>
+                <SC.LinkItem href="/movies">Movies</SC.LinkItem>
+              </Nav.Link>
+              <Nav.Link>
+                <SC.LinkItem href="/series">Series</SC.LinkItem>
+              </Nav.Link>
+            </SC.SelectNavDropdown>
           </Nav>
 
-          <Form className="d-flex">
+          {/* <Form className="d-flex">
             <Form.Control
               type="search"
               placeholder="Search"
@@ -49,7 +43,7 @@ const NavbarApp = () => {
               aria-label="Search"
             />
             <Button variant="outline-success">Search</Button>
-          </Form>
+          </Form> */}
         </Navbar.Collapse>
       </Container>
     </SC.Wrapper>
