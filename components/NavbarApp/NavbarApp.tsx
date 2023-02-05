@@ -6,7 +6,7 @@ import * as SC from "./NavbarApp.styles";
 
 const NavbarApp = () => {
   return (
-    <SC.Wrapper collapseOnSelect expand="lg" sticky="top">
+    <SC.Wrapper collapseOnSelect expand="lg" fixed="top">
       <Container>
         <Navbar.Brand>
           <Link href="/">
@@ -19,19 +19,19 @@ const NavbarApp = () => {
           className="justify-content-end"
         >
           <Nav>
-            <Nav.Link>
+            <SC.NavItem>
               <SC.LinkItem href="/">Home</SC.LinkItem>
-            </Nav.Link>
-            <Nav.Link>
+            </SC.NavItem>
+            <SC.NavItem>
               <SC.LinkItem href="/favorites">My favorites list</SC.LinkItem>
-            </Nav.Link>
+            </SC.NavItem>
             <SC.SelectNavDropdown title="Categories" id="basic-nav-dropdown">
-              <Nav.Link>
+              <Nav.Item>
                 <SC.LinkItem href="/movies">Movies</SC.LinkItem>
-              </Nav.Link>
-              <Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
                 <SC.LinkItem href="/series">Series</SC.LinkItem>
-              </Nav.Link>
+              </Nav.Item>
             </SC.SelectNavDropdown>
           </Nav>
 

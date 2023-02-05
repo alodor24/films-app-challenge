@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Navbar, NavDropdown } from "react-bootstrap";
+import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import Link from "next/link";
 
 export const Wrapper = styled(Navbar)`
@@ -22,6 +22,11 @@ export const Wrapper = styled(Navbar)`
   }
 `;
 
+export const NavItem = styled(Nav.Item)`
+  margin-top: 0.5rem;
+  padding: 0 0.3rem;
+`;
+
 export const LinkItem = styled(Link)`
   color: ${(props) => props.theme.colors.white[0]};
   transition: ${(props) => props.theme.transition[0]};
@@ -34,7 +39,6 @@ export const LinkItem = styled(Link)`
 export const SelectNavDropdown = styled(NavDropdown)`
   .dropdown-toggle.nav-link {
     color: ${(props) => props.theme.colors.white[0]};
-    transition: ${(props) => props.theme.transition[0]};
 
     :hover {
       color: ${(props) => props.theme.colors.blue[0]};
@@ -52,10 +56,11 @@ export const SelectNavDropdown = styled(NavDropdown)`
     border: none;
     padding: 0.5rem;
 
-    .nav-link {
+    .nav-item {
       padding: 0.3rem 0.5rem;
+      transition: ${(props) => props.theme.transition[0]};
 
-      a:hover {
+      :hover {
         margin-left: 0.5rem;
       }
     }
