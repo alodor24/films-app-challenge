@@ -25,6 +25,10 @@ export const Wrapper = styled(Navbar)`
 export const NavItem = styled(Nav.Item)`
   margin-top: 0.5rem;
   padding: 0 0.3rem;
+
+  @media (max-width: 768px) {
+    padding-left: 0;
+  }
 `;
 
 export const LinkItem = styled(Link)`
@@ -63,6 +67,12 @@ export const SelectNavDropdown = styled(NavDropdown)`
       :hover {
         margin-left: 0.5rem;
       }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .dropdown-menu.show {
+      backdrop-filter: none;
     }
   }
 `;
