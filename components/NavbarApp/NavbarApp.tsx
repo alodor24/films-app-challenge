@@ -22,17 +22,6 @@ const NavbarApp = () => {
             <SC.NavItem>
               <SC.LinkItem href="/">Home</SC.LinkItem>
             </SC.NavItem>
-            <SC.NavItem>
-              <SC.LinkItem href="/favorites">My favorites list</SC.LinkItem>
-            </SC.NavItem>
-            <SC.SelectNavDropdown title="Categories" id="basic-nav-dropdown">
-              <Nav.Item>
-                <SC.LinkItem href="/movies">Movies</SC.LinkItem>
-              </Nav.Item>
-              <Nav.Item>
-                <SC.LinkItem href="/series">Series</SC.LinkItem>
-              </Nav.Item>
-            </SC.SelectNavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>

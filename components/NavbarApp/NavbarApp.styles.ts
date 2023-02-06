@@ -24,11 +24,6 @@ export const Wrapper = styled(Navbar)`
 
 export const NavItem = styled(Nav.Item)`
   margin-top: 0.5rem;
-  padding: 0 0.3rem;
-
-  @media (max-width: 768px) {
-    padding-left: 0;
-  }
 `;
 
 export const LinkItem = styled(Link)`
@@ -37,42 +32,5 @@ export const LinkItem = styled(Link)`
 
   :hover {
     color: ${(props) => props.theme.colors.blue[0]};
-  }
-`;
-
-export const SelectNavDropdown = styled(NavDropdown)`
-  .dropdown-toggle.nav-link {
-    color: ${(props) => props.theme.colors.white[0]};
-
-    :hover {
-      color: ${(props) => props.theme.colors.blue[0]};
-    }
-  }
-
-  .dropdown-toggle.show {
-    color: ${(props) => props.theme.colors.blue[0]};
-  }
-
-  .dropdown-menu.show {
-    background-color: ${(props) => props.theme.colors.grey[2]};
-    backdrop-filter: blur(5rem);
-    box-shadow: ${(props) => props.theme.shadow[0]};
-    border: none;
-    padding: 0.5rem;
-
-    .nav-item {
-      padding: 0.3rem 0.5rem;
-      transition: ${(props) => props.theme.transition[0]};
-
-      :hover {
-        margin-left: 0.5rem;
-      }
-    }
-  }
-
-  @media (max-width: 768px) {
-    .dropdown-menu.show {
-      backdrop-filter: none;
-    }
   }
 `;
