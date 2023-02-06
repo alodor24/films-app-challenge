@@ -1,4 +1,4 @@
-import HeroHome from "@/components/HeroHome";
+import Hero from "@/components/Hero";
 import Layout from "@/components/Layout";
 import { useRouter } from "next/router";
 import React, { useCallback, useEffect, useState } from "react";
@@ -8,6 +8,8 @@ const Detail = () => {
   const { id, detail } = router.query;
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(false);
+
+  console.log(data);
 
   const getDetailById = useCallback(async () => {
     if (id && detail) {
@@ -35,9 +37,7 @@ const Detail = () => {
       {loading ? (
         <div style={{ color: "#fff" }}>Loading...!!</div>
       ) : (
-        <Layout>
-          <HeroHome />
-        </Layout>
+        <Layout>{/* <Hero bgImage={} /> */}</Layout>
       )}
     </div>
   );

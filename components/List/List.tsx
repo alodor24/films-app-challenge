@@ -5,7 +5,7 @@ import Average from "../../public/images/average-icon.svg";
 import Play from "../../public/images/play-icon.svg";
 import * as SC from "./List.styles";
 import Link from "next/link";
-import { CategorieMode } from "@/helpers/contants";
+import { BASE_URL_IMAGE, CategorieMode } from "@/helpers/contants";
 
 type Props = {
   data: Movies[];
@@ -23,9 +23,7 @@ const List: React.FC<Props> = ({ data, mode }) => {
                 <SC.CardImage>
                   <Image
                     className="image-item"
-                    src={
-                      "https://image.tmdb.org/t/p/original" + item.backdrop_path
-                    }
+                    src={`${BASE_URL_IMAGE}${item.backdrop_path}`}
                     alt={item.title}
                     width={500}
                     height={180}
