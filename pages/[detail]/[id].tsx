@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import Layout from "@/components/Layout";
+import Loader from "@/components/Loader";
 import { BASE_URL_IMAGE } from "@/helpers/contants";
 import { Movie, Serie } from "@/helpers/types";
 import { useRouter } from "next/router";
@@ -36,23 +37,21 @@ const Detail = () => {
   }, [getDetailById]);
 
   return (
-    <div>
+    <Layout>
       {loading ? (
-        <div style={{ color: "#fff" }}>Loading...!!</div>
+        <Loader />
       ) : (
         <>
           {data && (
-            <Layout>
-              <Hero bgImage={BASE_URL_IMAGE + data.backdrop_path}>
-                <Container>
-                  <h1>{data.title || data.name}</h1>
-                </Container>
-              </Hero>
-            </Layout>
+            <Hero bgImage={BASE_URL_IMAGE + data.backdrop_path}>
+              <Container>
+                <h1>{data.title || data.name}</h1>
+              </Container>
+            </Hero>
           )}
         </>
       )}
-    </div>
+    </Layout>
   );
 };
 
