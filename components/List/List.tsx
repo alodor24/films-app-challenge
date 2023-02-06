@@ -5,18 +5,20 @@ import Average from "../../public/images/average-icon.svg";
 import Play from "../../public/images/play-icon.svg";
 import * as SC from "./List.styles";
 import Link from "next/link";
+import { CategorieMode } from "@/helpers/contants";
 
 type Props = {
   data: Movies[];
+  mode: CategorieMode;
 };
 
-const List: React.FC<Props> = ({ data }) => {
+const List: React.FC<Props> = ({ data, mode }) => {
   return (
     <SC.Wrapper>
       <Row>
         {data.map((item) => (
           <SC.ContainerCard key={item.id} md={6} lg={4}>
-            <Link href={`/deail/${item.id}`}>
+            <Link href={`/${mode}/${item.id}`}>
               <SC.Card>
                 <SC.CardImage>
                   <Image

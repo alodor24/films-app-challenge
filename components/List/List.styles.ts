@@ -47,6 +47,7 @@ export const CardImage = styled.div`
 
   img.image-item {
     width: 100%;
+    height: auto;
     object-fit: cover;
     object-position: center;
     transition: ${(props) => props.theme.transition[0]};

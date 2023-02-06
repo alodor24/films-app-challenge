@@ -1,6 +1,7 @@
 import HeroHome from "@/components/HeroHome";
 import Layout from "@/components/Layout";
 import List from "@/components/List";
+import { CategorieMode } from "@/helpers/contants";
 import { Movies } from "@/helpers/types";
 
 type Props = {
@@ -11,7 +12,7 @@ const Home: React.FC<Props> = ({ dataMovies }) => {
   return (
     <Layout>
       <HeroHome />
-      <List data={dataMovies} />
+      <List data={dataMovies} mode={CategorieMode.MOVIE} />
     </Layout>
   );
 };
