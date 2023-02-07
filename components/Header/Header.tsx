@@ -21,7 +21,6 @@ const Header: React.FC<Props> = ({ data }) => {
     const existInFavorite = favorites.filter(
       (item: { id: number }) => item.id === Number(id)
     );
-    console.log(existInFavorite);
 
     if (existInFavorite.length) {
       setIsFavorite(true);

@@ -21,7 +21,11 @@ const List: React.FC<Props> = ({ data, mode, title }) => {
 
         {data.map((item) => (
           <SC.ContainerCard key={item.id} md={6} lg={4} className="wow zoomIn">
-            <Link href={`/${mode}/${item.id}`}>
+            <Link
+              href={
+                mode !== CategorieMode.FAVORITE ? `/${mode}/${item.id}` : "#!"
+              }
+            >
               <SC.Card>
                 <SC.CardImage>
                   <Image

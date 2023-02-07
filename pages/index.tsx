@@ -6,6 +6,7 @@ import Selector from "@/components/Selector";
 import useFilterContext from "@/context/FilterContext/useFilterContext";
 import { CategorieMode } from "@/helpers/contants";
 import { Movies, Series } from "@/helpers/types";
+import useStoreFavorite from "@/hooks/useStoreFavorite";
 
 type Props = {
   dataMovies: Movies[];
@@ -14,6 +15,7 @@ type Props = {
 
 const Home: React.FC<Props> = ({ dataMovies, dataSeries }) => {
   const { filter } = useFilterContext();
+  const { favorites } = useStoreFavorite();
 
   return (
     <Layout>
@@ -27,6 +29,11 @@ const Home: React.FC<Props> = ({ dataMovies, dataSeries }) => {
         <>
           <List data={dataMovies} mode={CategorieMode.MOVIE} title="Movies" />
           <List data={dataSeries} mode={CategorieMode.TV} title="Series" />
+          <List
+            data={favorites}
+            mode={CategorieMode.FAVORITE}
+            title="Favorites"
+          />
         </>
       )}
 
@@ -36,6 +43,14 @@ const Home: React.FC<Props> = ({ dataMovies, dataSeries }) => {
 
       {filter === CategorieMode.TV && (
         <List data={dataSeries} mode={CategorieMode.TV} title="Series" />
+      )}
+
+      {filter === CategorieMode.FAVORITE && (
+        <List
+          data={favorites}
+          mode={CategorieMode.FAVORITE}
+          title="Favorites"
+        />
       )}
     </Layout>
   );

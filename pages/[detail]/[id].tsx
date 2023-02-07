@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Layout from "@/components/Layout";
 import Loader from "@/components/Loader";
-import { BASE_URL_IMAGE } from "@/helpers/contants";
+import { BASE_URL_IMAGE, CategorieMode } from "@/helpers/contants";
 import { Movie, Serie } from "@/helpers/types";
 import { useRouter } from "next/router";
 import React, { useCallback, useEffect, useState } from "react";
@@ -32,8 +32,10 @@ const Detail = () => {
   }, [detail, id]);
 
   useEffect(() => {
-    getDetailById();
-  }, [getDetailById]);
+    if (detail !== CategorieMode.FAVORITE) {
+      getDetailById();
+    }
+  }, [detail, getDetailById]);
 
   return (
     <Layout>
