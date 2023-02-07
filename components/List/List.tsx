@@ -19,7 +19,7 @@ const List: React.FC<Props> = ({ data, mode, title }) => {
       <Row>
         <SC.TitleSection>{title}</SC.TitleSection>
 
-        {data.map((item) => (
+        {(data || []).map((item) => (
           <SC.ContainerCard key={item.id} md={6} lg={4} className="wow zoomIn">
             <Link
               href={
