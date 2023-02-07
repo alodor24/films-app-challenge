@@ -11,7 +11,7 @@ const Description: React.FC<Props> = ({ data }) => {
   return (
     <SC.Wrapper>
       <SC.Section>
-        <div>
+        <div className="wow zoomIn">
           <SC.Label>Genre:</SC.Label>
           <SC.Genres>
             {data.genres.map((item) => (
@@ -30,7 +30,7 @@ const Description: React.FC<Props> = ({ data }) => {
           <SC.Label>Popularity:</SC.Label>
           <p>{data.popularity}</p>
         </div>
-        <div>
+        <div className="wow zoomIn">
           <SC.Label>Description:</SC.Label>
           <p>{data.overview}</p>
         </div>
