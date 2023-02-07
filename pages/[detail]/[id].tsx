@@ -1,3 +1,4 @@
+import Description from "@/components/Description";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Layout from "@/components/Layout";
@@ -12,8 +13,6 @@ const Detail = () => {
   const { id, detail } = router.query;
   const [data, setData] = useState<Movie | Serie | undefined>(undefined);
   const [loading, setLoading] = useState(false);
-
-  console.log(data);
 
   const getDetailById = useCallback(async () => {
     if (id && detail) {
@@ -47,7 +46,7 @@ const Detail = () => {
               <Hero bgImage={BASE_URL_IMAGE + data.backdrop_path}>
                 <Header data={data} />
               </Hero>
-              <div style={{ height: "500px" }}></div>
+              <Description data={data} />
             </>
           )}
         </>

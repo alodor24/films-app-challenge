@@ -51,6 +51,11 @@ export const HeaderButton = styled(Button)<{ withBackground?: boolean }>`
     background-color: ${(props) => props.theme.colors.grey[3]};
   }
 
+  :active {
+    border: solid 2px ${(props) => props.theme.colors.white[0]} !important;
+    background-color: ${(props) => props.theme.colors.grey[3]} !important;
+  }
+
   :disabled {
     background-color: ${(props) => props.theme.colors.grey[3]};
     border-color: ${(props) => props.theme.colors.white[0]};
