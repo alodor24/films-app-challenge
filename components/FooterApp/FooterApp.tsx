@@ -12,7 +12,7 @@ const FooterApp = () => {
           <SC.Text>
             Created by José Méndez |{" "}
             <SC.ExternalLink
-              href="https://github.com/alodor24/movie-app-challenge"
+              href="https://github.com/alodor24/films-app-challenge"
               target="_blank"
             >
               Github Repository
