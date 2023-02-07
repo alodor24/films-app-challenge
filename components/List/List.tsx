@@ -1,5 +1,5 @@
 import { Movies, Series } from "@/helpers/types";
-import { Dropdown, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import Image from "next/image";
 import Average from "../../public/images/average-icon.svg";
 import Play from "../../public/images/play-icon.svg";
@@ -11,28 +11,11 @@ type Props = {
   data: Movies[] | Series[];
   mode: CategorieMode;
   title: string;
-  showDropdown?: boolean;
 };
 
-const List: React.FC<Props> = ({ data, mode, title, showDropdown = true }) => {
+const List: React.FC<Props> = ({ data, mode, title }) => {
   return (
     <SC.Wrapper>
-      {showDropdown && (
-        <Row>
-          <SC.ContainerDropdown>
-            <Dropdown>
-              <SC.DropdownButton>Categories</SC.DropdownButton>
-              <SC.DropdownSelect>
-                <Dropdown.Item>All</Dropdown.Item>
-                <Dropdown.Item>Movies</Dropdown.Item>
-                <Dropdown.Item>Series</Dropdown.Item>
-                <Dropdown.Item>Favorites</Dropdown.Item>
-              </SC.DropdownSelect>
-            </Dropdown>
-          </SC.ContainerDropdown>
-        </Row>
-      )}
-
       <Row>
         <SC.TitleSection>{title}</SC.TitleSection>
 

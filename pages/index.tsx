@@ -2,6 +2,8 @@ import Hero from "@/components/Hero";
 import Layout from "@/components/Layout";
 import List from "@/components/List";
 import Search from "@/components/Search";
+import Selector from "@/components/Selector";
+import useFilterContext from "@/context/FilterContext/useFilterContext";
 import { CategorieMode } from "@/helpers/contants";
 import { Movies, Series } from "@/helpers/types";
 
@@ -11,18 +13,31 @@ type Props = {
 };
 
 const Home: React.FC<Props> = ({ dataMovies, dataSeries }) => {
+  const { filter } = useFilterContext();
+  console.log(filter);
+
   return (
     <Layout>
       <Hero bgImage="/images/hero-home.jpg">
         <Search />
       </Hero>
-      <List data={dataMovies} mode={CategorieMode.MOVIE} title="Movies" />
-      <List
-        data={dataSeries}
-        mode={CategorieMode.TV}
-        title="Series"
-        showDropdown={false}
-      />
+
+      <Selector />
+
+      {filter === CategorieMode.ALL && (
+        <>
+          <List data={dataMovies} mode={CategorieMode.MOVIE} title="Movies" />
+          <List data={dataSeries} mode={CategorieMode.TV} title="Series" />
+        </>
+      )}
+
+      {filter === CategorieMode.MOVIE && (
+        <List data={dataMovies} mode={CategorieMode.MOVIE} title="Movies" />
+      )}
+
+      {filter === CategorieMode.TV && (
+        <List data={dataSeries} mode={CategorieMode.TV} title="Series" />
+      )}
     </Layout>
   );
 };
