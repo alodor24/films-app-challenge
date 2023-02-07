@@ -14,7 +14,6 @@ type Props = {
 
 const Home: React.FC<Props> = ({ dataMovies, dataSeries }) => {
   const { filter } = useFilterContext();
-  console.log(filter);
 
   return (
     <Layout>

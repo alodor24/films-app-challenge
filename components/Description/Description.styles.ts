@@ -39,6 +39,7 @@ export const Genres = styled.ul`
     display: inline-block;
     border: solid 0.1rem ${(props) => props.theme.colors.white[0]};
     margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
     padding: 0 0.7rem;
     border-radius: 1rem;
     font-weight: ${(props) => props.theme.fontWeight[1]};
