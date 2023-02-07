@@ -17,6 +17,7 @@ const theme = {
     "0px -38px 95px 69px rgba(33, 33, 33, 0.8)",
     "0px 0px 30px 0px rgba(77, 208, 225, 0.8)",
     "0 0 1rem #01b4e4",
+    "3px 3px 9px rgba(0, 0, 0, 0.9)",
   ],
   gradient: [
     "linear-gradient(45deg, rgba(144,206,161,1) 0%, rgba(1,180,228,1) 56%)",

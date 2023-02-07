@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Layout from "@/components/Layout";
 import Loader from "@/components/Loader";
@@ -5,7 +6,6 @@ import { BASE_URL_IMAGE } from "@/helpers/contants";
 import { Movie, Serie } from "@/helpers/types";
 import { useRouter } from "next/router";
 import React, { useCallback, useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
 
 const Detail = () => {
   const router = useRouter();
@@ -43,11 +43,12 @@ const Detail = () => {
       ) : (
         <>
           {data && (
-            <Hero bgImage={BASE_URL_IMAGE + data.backdrop_path}>
-              <Container>
-                <h1>{data.title || data.name}</h1>
-              </Container>
-            </Hero>
+            <>
+              <Hero bgImage={BASE_URL_IMAGE + data.backdrop_path}>
+                <Header data={data} />
+              </Hero>
+              <div style={{ height: "500px" }}></div>
+            </>
           )}
         </>
       )}

@@ -9,7 +9,7 @@ type Props = {
 const Hero: React.FC<Props> = ({ children, bgImage }) => {
   return (
     <>
-      {bgImage !== undefined && (
+      {bgImage && (
         <Parallax bgImage={bgImage} bgImageAlt="Parallax" strength={200}>
           <SC.Wrapper>
             {children}
